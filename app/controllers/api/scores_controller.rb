@@ -7,19 +7,17 @@ class Api::ScoresController < ApplicationController
 
   def create
     score = current_user.scores.new(score_params)
-
-    if score.save
-      render json: score
+    if scsore.save
+      render json:score
     else
       render json: { errors: score.errors.join(', ') }, status: 422
     end
   end
 
   private
-    def score_params
-      # { score: { value: 100 }}
-      params.require(:score).permit(:value)
-    end
 
+  def score_params
+    params.require(:score).permit(:value)
+  end
 
 end

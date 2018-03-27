@@ -10,10 +10,10 @@ const styles = {
 }
 
 class Game extends React.Component {
-  state = { 
+  state = {
     roll: 0,
     dice: [...new Array(5)],
-    keep: [], 
+    keep: [],
   }
 
   toggleKept = (i) => {
@@ -23,14 +23,13 @@ class Game extends React.Component {
     if (keep.includes(i))
       updatedKeep = keep.filter( k => k !== i )
     else
-      updatedKeep = [...keep, i]
+    updatedKeep = [...keep, i]
 
-    this.setState({ keep: updatedKeep })
+    this.setState({ keep: updatedKeep})
   }
 
   rollDice = () => {
     const { keep } = this.state;
-
     const dice = this.state.dice.map( (el, i) => {
       if (keep.includes(i))
         return el
@@ -52,7 +51,7 @@ class Game extends React.Component {
             width={10}
             style={{...styles.fullHeight, ...styles.board }}
           >
-            <Board 
+            <Board
               roll={roll}
               dice={dice}
               rollDice={this.rollDice}
@@ -73,6 +72,3 @@ class Game extends React.Component {
 }
 
 export default Game
-
-
-

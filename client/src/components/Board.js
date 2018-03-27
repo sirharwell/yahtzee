@@ -1,18 +1,8 @@
-import React from 'react'
-import { 
-  Grid, 
-  Button, 
-  Divider, 
-} from 'semantic-ui-react'
-import Dice from './Dice'
+import React from 'react';
+import { Grid, Button, Divider } from 'semantic-ui-react';
+import Dice from './Dice';
 
-const Board = ({ 
-  roll, 
-  dice, 
-  rollDice, 
-  keep,
-  toggleKept,
-}) => {
+const Board = ({ roll, dice, rollDice, keep, toggleKept }) => {
   const maxRoll = roll === 3;
   const disabled = maxRoll ? { disabled: true } : {}
   return (
@@ -38,13 +28,13 @@ const Board = ({
                   kept={kept}
                   toggleKept={toggleKept}
                   index={i}
-                />
+                  />
               )
-            })
-          }
+            })  
+        }
       </Grid.Row>
     </Grid>
   )
 }
 
-export default Board
+export default Board;
