@@ -13,7 +13,7 @@ class ScoreSection extends React.Component {
     return (
       <List.Item key={label}>
         <Header floated="left">{label}</Header>
-        <Header
+        <Header 
           floated="right"
           style={{ marginRight: '20px' }}
         >
@@ -27,7 +27,7 @@ class ScoreSection extends React.Component {
     const { currentGame: { scores }, label } = this.props;
     const sectionScores = [];
     const sectionTotal = scores
-      .filter( s => s.section === label.toLowerCase() )
+      .filter( s => s.section === label.toLowerCase() ) 
       .reduce( (total, entry) => {
         const score = entry.score || 0
         return total + score
@@ -42,7 +42,7 @@ class ScoreSection extends React.Component {
     }
 
     return sectionScores;
-
+    
   }
 
   render() {
@@ -53,8 +53,8 @@ class ScoreSection extends React.Component {
         <List divided>
           { scores
               .filter( s => s.section === label.toLowerCase() )
-              .map( (score, i) =>
-                <ScoreRow key={i} {...score} />
+              .map( (score, i) => 
+                <ScoreRow key={i} {...score} /> 
               )
           }
           { this.generateTotals() }

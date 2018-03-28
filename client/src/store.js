@@ -1,7 +1,7 @@
-import {
-  createStore,
-  compose,
-  applyMiddleware
+import { 
+  createStore, 
+  compose, 
+  applyMiddleware 
 } from 'redux';
 import apiMiddleware from 'redux-devise-axios';
 import axios from 'axios';
@@ -26,3 +26,13 @@ if (module.hot) {
 }
 
 export default store;
+
+
+
+
+
+
+
+
+
+

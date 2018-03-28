@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from 'react'
 import ScoreSection from './ScoreSection';
 
 const ScoreCard = () => (
@@ -8,4 +8,4 @@ const ScoreCard = () => (
   </Fragment>
 )
 
-export default ScoreCard;
+export default ScoreCard

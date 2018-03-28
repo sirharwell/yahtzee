@@ -29,5 +29,6 @@ module Yahtzee
             expose: ['access-token', 'client']
       end
     end
+
   end
 end

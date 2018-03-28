@@ -1,6 +1,6 @@
 import React from 'react'
-import {
-  Image,
+import { 
+  Image, 
   Grid,
 } from 'semantic-ui-react'
 import { connect } from 'react-redux';
@@ -19,20 +19,20 @@ const styles = {
 
 const images = { d1, d2, d3, d4, d5, d6 }
 
-const Dice = ({
+const Dice = ({ 
   value,
   index,
-  kept,
+  kept, 
   dispatch,
 }) => (
-  <Grid.Column
-    textAlign="center"
+  <Grid.Column 
+    textAlign="center" 
     width={3}
   >
     <Image
-      style={ kept ?
-        {...styles.dice, ...styles.selected } :
-        styles.dice
+      style={ kept ? 
+        {...styles.dice, ...styles.selected } : 
+        styles.dice 
       }
       src={images[`d${value}`]}
       alt={`dice value ${value}`}

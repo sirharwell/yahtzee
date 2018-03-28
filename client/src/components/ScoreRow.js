@@ -1,7 +1,7 @@
 import React from 'react';
-import {
-  List,
-  Header
+import { 
+  List, 
+  Header 
 } from 'semantic-ui-react';
 
 const styles = {

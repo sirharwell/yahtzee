@@ -1,10 +1,19 @@
-import React from 'react';
-import { Grid, Button, Divider } from 'semantic-ui-react';
-import { connect } form 'react-redux'
-import { rollDice } from '../actions/currentGarme';
-import Dice from './Dice';
+import React from 'react'
+import { 
+  Grid, 
+  Button, 
+  Divider, 
+} from 'semantic-ui-react'
+import { connect } from 'react-redux'
+import { rollDice } from '../actions/currentGame';
+import Dice from './Dice'
 
-const Board = ({ roll, dice, keep, dispatch, }) => {
+const Board = ({ 
+  roll, 
+  dice, 
+  keep,
+  dispatch,
+}) => {
   const maxRoll = roll === 3;
   const disabled = maxRoll ? { disabled: true } : {}
   return (
@@ -28,12 +37,11 @@ const Board = ({ roll, dice, keep, dispatch, }) => {
                   key={i}
                   value={d}
                   kept={kept}
-                  toggleKept={toggleKept}
                   index={i}
-                  />
+                />
               )
             })
-        }
+          }
       </Grid.Row>
     </Grid>
   )
@@ -41,7 +49,12 @@ const Board = ({ roll, dice, keep, dispatch, }) => {
 
 const mapStateToProps = (state) => {
   const { roll, dice, keep } = state.currentGame;
-  return { roll, dice, keep }
+  return {
+    roll,
+    dice,
+    keep,
+  }
 }
 
-export default connect(mapStateToProps)(Board);
+
+export default connect(mapStateToProps)(Board)

@@ -111,7 +111,7 @@ const splitArray = (dice) => {
   });
 
   return split;
-
+  
 }
 
 const findSeq = (dice) => {
@@ -123,3 +123,6 @@ const findSeq = (dice) => {
 
   return count;
 }
+
+
+
