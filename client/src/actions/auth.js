@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const LOGIN = 'LOGIN';
-const LOGOUT = 'LOGOUT';
-const VALIDATE_TOKEN = 'VALIDATE_TOKEN';
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
+export const VALIDATE_TOKEN = 'VALIDATE_TOKEN';
 
 export const login = (email, password, history) => {
   return (dispatch) => {
@@ -48,6 +48,6 @@ export const validateToken = (cb = () => {}) => {
   }
 }
 
-const user = (data, header) => {
-  return { type: LOGIN, user: data, headers }
+const user = (res, headers) => {
+  return { type: LOGIN, user: res.data, headers }
 }
