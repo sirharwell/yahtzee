@@ -31,6 +31,15 @@ const currentGame = (
   action
 ) => {
   switch (action.type) {
+
+    case 'NEW_GAME':
+  return {
+    scores: scores.map( s => { return { ...s, score: null } } ),
+    roll: 0,
+    dice: [...new Array(5)],
+    keep: []
+  }
+  
     case RESET_ROLL:
       return {
         ...state,
