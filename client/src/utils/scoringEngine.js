@@ -111,18 +111,15 @@ const splitArray = (dice) => {
   });
 
   return split;
-  
+
 }
 
 const findSeq = (dice) => {
   let count = 1
-  for (let i in dice) {
+  for (let i = 0; i < dice.length; i++) {
     if (dice[i + 1] - 1 === dice[i])
       ++count
   }
 
   return count;
 }
-
-
-
