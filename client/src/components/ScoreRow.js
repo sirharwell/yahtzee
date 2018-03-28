@@ -1,7 +1,7 @@
 import React from 'react';
-import {
-  List,
-  Header
+import { 
+  List, 
+  Header 
 } from 'semantic-ui-react';
 
 import { updateScores, resetRoll } from '../actions/currentGame';
@@ -47,7 +47,7 @@ class ScoreRow extends React.Component {
               style={styles.pointer}
               name="check circle outline"
               color="green"
-              onClick={ roll !== 0 ?
+              onClick={ roll !== 0 ? 
                 () => this.updateScore(name) : f => f
               }
             />
@@ -70,3 +70,4 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(ScoreRow);
+

@@ -51,3 +51,7 @@ export const validateToken = (cb = () => {}) => {
 const user = (res, headers) => {
   return { type: LOGIN, user: res.data, headers }
 }
+
+
+
+

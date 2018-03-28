@@ -1,8 +1,8 @@
 import React from 'react'
-import {
-  Grid,
-  Button,
-  Divider,
+import { 
+  Grid, 
+  Button, 
+  Divider, 
   Header,
 } from 'semantic-ui-react'
 import { connect } from 'react-redux'
@@ -20,10 +20,11 @@ class Board extends React.Component {
         gameOver = false
     })
 
-    if (gameOver)
-
-    if (gameOver && !this.state.gameOver)
+    if (gameOver && !this.state.gameOver) {
+      const score = this.calcScore();
+      this.props.dispatch(postScore(score))
       this.setState({ gameOver })
+    }
   }
 
   calcScore = () => {
@@ -41,8 +42,8 @@ class Board extends React.Component {
 
   render() {
     const {
-      roll,
-      dice,
+      roll, 
+      dice, 
       keep,
       scores,
       dispatch,
