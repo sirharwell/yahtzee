@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom';
-import { 
+import {
   ProtectedRoute,
   Login,
   Register,
@@ -16,13 +16,21 @@ import {
 import Game from './components/Game'
 import Scores from './components/Scores'
 
+const authRoutes = [
+  { url: '/', text: 'Play Yahtzee' },
+  { url: '/scores', text: 'Scores' },
+]
+
 const App = () => (
   <div>
-    <NavBar handleLogout={logout} />
+    <NavBar
+      authRoutes={authRoutes}
+      handleLogout={logout}
+    />
     <FetchUser validateToken={validateToken}>
       <Switch>
-        <ProtectedRoute 
-          exact 
+        <ProtectedRoute
+          exact
           path="/"
           component={Game}
         />
@@ -34,7 +42,7 @@ const App = () => (
         <Route
           exact
           path="/login"
-          render={ props => 
+          render={ props =>
             <Login {...props} handleLogin={login} />
           }
         />
@@ -42,8 +50,8 @@ const App = () => (
           exact
           path="/register"
           render={ props =>
-            <Register 
-              {...props} 
+            <Register
+              {...props}
               registerUser={register}
             />
           }
@@ -54,8 +62,3 @@ const App = () => (
 )
 
 export default App
-
-
-
-
-
